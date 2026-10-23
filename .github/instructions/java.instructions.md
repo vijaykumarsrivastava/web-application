@@ -1,12 +1,5 @@
 ---
 applyTo: "**/*.java"
 ---
-
-# Java 25 conventions
-- Write idiomatic Java 25 compatible with the project's compiler settings.
-- Prefer records for immutable value carriers; use sealed hierarchies only where they simplify a closed domain model.
-- Prefer clear control flow and standard collections; avoid unnecessary streams and abstractions.
-- Use try-with-resources for owned AutoCloseable resources.
-- Avoid shared mutable state; document concurrency assumptions.
-- Treat virtual threads as a concurrency choice for blocking I/O, not as a substitute for backpressure.
-- Do not rely on preview features without explicit project configuration and user approval.
+# Java 25 coding rules
+Prefer clear idiomatic Java 25, immutable data, records for simple value carriers, sealed types where they clarify a closed hierarchy, pattern matching when readable, and safe resource management with try-with-resources. Do not use preview features without explicit project configuration. Avoid shared mutable state, unnecessary allocations in hot paths, blocking calls on inappropriate executors, and premature optimization. Measure before tuning; document concurrency, exception and interruption semantics. Use meaningful names and cohesive small units. Apply SOLID, DRY, KISS, YAGNI and composition over inheritance.

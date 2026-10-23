@@ -1,13 +1,5 @@
 ---
-applyTo: "src/main/**/*.java"
+applyTo: "**/*.java,**/application*.yml,**/application*.yaml,**/application*.properties"
 ---
-
-# Spring Boot conventions
-- Follow the repository's Spring Boot version and its supported APIs.
-- Use constructor injection; keep controllers thin and services cohesive.
-- Validate requests using Jakarta Validation; use @RestControllerAdvice and ProblemDetail when consistent with existing APIs.
-- Use explicit DTO mappings; avoid exposing entities directly.
-- Keep @Transactional on service operations that need it, with deliberate read-only semantics.
-- Externalize configuration through @ConfigurationProperties when useful; validate required properties.
-- Use SLF4J structured/contextual logging without exposing sensitive data.
-- Use Actuator health/metrics if already configured; do not expose sensitive endpoints publicly.
+# Spring Boot rules
+Use Spring Boot 4.1.1 conventions supported by the actual effective POM. Favor constructor injection, configuration properties validation, centralized exception translation, bean validation, appropriate security filters, clear transaction demarcation, no self-invocation assumptions for proxied behavior, and no blocking work on unsuitable threads. Distinguish framework auto-configuration from application configuration. Never assume specific starter or package names without checking installed dependencies. Include graceful shutdown, Actuator/readiness, metrics and structured logs where applicable.
